@@ -24,7 +24,9 @@ function dlts_book_features_apachesolr_environments() {
   $environment->index_bundles = array(
     'node' => array(
       0 => 'dlts_book',
-      1 => 'map',
+      1 => 'dlts_map',
+      2 => 'dlts_map_page',
+      3 => 'dlts_series',
     ),
   );
   $export['solr'] = $environment;

@@ -45,6 +45,8 @@ function dlts_book_features_field_group_info() {
       19 => 'field_topic',
       20 => 'field_volume',
       21 => 'field_publication_date_text',
+      22 => 'field_geographic_coordinates',
+      23 => 'field_geographic_subject',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -184,6 +186,35 @@ function dlts_book_features_field_group_info() {
     ),
   );
   $export['group_essence|node|dlts_book|metadata'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_essence|node|dlts_map_page|form';
+  $field_group->group_name = 'group_essence';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dlts_map_page';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Essence',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_cropped_master',
+      1 => 'field_service_copy',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Essence',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-essence field-group-tab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_essence|node|dlts_map_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

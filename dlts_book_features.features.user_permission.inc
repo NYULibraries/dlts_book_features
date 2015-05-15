@@ -15,6 +15,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'access administration menu',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'admin_menu',
   );
@@ -77,6 +78,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'access contextual links',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'contextual',
   );
@@ -263,6 +265,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'admin_fields',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'ds_ui',
   );
@@ -272,6 +275,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'admin_view_modes',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'ds_ui',
   );
@@ -299,7 +303,6 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'administer comments',
     'roles' => array(
       0 => 'administrator',
-      1 => 'collection curator',
     ),
     'module' => 'comment',
   );
@@ -336,6 +339,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'administer dlts utilities',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'dlts_utilities',
   );
@@ -499,7 +503,6 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'administer taxonomy',
     'roles' => array(
       0 => 'administrator',
-      1 => 'collection curator',
     ),
     'module' => 'taxonomy',
   );
@@ -599,7 +602,6 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'create dlts_book content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -685,19 +687,11 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: create map content.
-  $permissions['create map content'] = array(
-    'name' => 'create map content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: create page content.
   $permissions['create page content'] = array(
     'name' => 'create page content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -819,19 +813,11 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete any map content.
-  $permissions['delete any map content'] = array(
-    'name' => 'delete any map content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: delete any page content.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -850,7 +836,6 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'delete own dlts_book content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -936,19 +921,11 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete own map content.
-  $permissions['delete own map content'] = array(
-    'name' => 'delete own map content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: delete own page content.
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -977,6 +954,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'delete terms in 2',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'taxonomy',
   );
@@ -984,7 +962,10 @@ function dlts_book_features_user_default_permissions() {
   // Exported permission: delete terms in 3.
   $permissions['delete terms in 3'] = array(
     'name' => 'delete terms in 3',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'collection curator',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -1002,6 +983,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit any article content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1031,6 +1013,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit any dlts_book_section content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1040,6 +1023,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit any dlts_book_stitched_page content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1049,6 +1033,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit any dlts_collection content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1058,6 +1043,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit any dlts_multivol content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1067,6 +1053,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit any dlts_multivol_book content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1076,6 +1063,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit any dlts_partner content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1085,6 +1073,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit any dlts_series content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1094,14 +1083,8 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit any dlts_series_book content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: edit any map content.
-  $permissions['edit any map content'] = array(
-    'name' => 'edit any map content',
-    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1120,6 +1103,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own article content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1148,6 +1132,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own dlts_book_page content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1157,6 +1142,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own dlts_book_section content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1166,6 +1152,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own dlts_book_stitched_page content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1175,6 +1162,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own dlts_collection content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1184,6 +1172,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own dlts_multivol content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1193,6 +1182,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own dlts_multivol_book content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1202,6 +1192,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own dlts_partner content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1211,6 +1202,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own dlts_series content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'node',
   );
@@ -1220,14 +1212,8 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit own dlts_series_book content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: edit own map content.
-  $permissions['edit own map content'] = array(
-    'name' => 'edit own map content',
-    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1256,6 +1242,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'edit terms in 2',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'taxonomy',
   );
@@ -1263,7 +1250,10 @@ function dlts_book_features_user_default_permissions() {
   // Exported permission: edit terms in 3.
   $permissions['edit terms in 3'] = array(
     'name' => 'edit terms in 3',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'collection curator',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -1272,6 +1262,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'flush caches',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'admin_menu',
   );
@@ -1436,6 +1427,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'toggle field translatability',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'entity_translation',
   );
@@ -1454,6 +1446,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'translate any entity',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'entity_translation',
   );
@@ -1463,6 +1456,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'translate content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'translation',
   );
@@ -1482,6 +1476,7 @@ function dlts_book_features_user_default_permissions() {
     'name' => 'translate node entities',
     'roles' => array(
       0 => 'administrator',
+      1 => 'collection curator',
     ),
     'module' => 'entity_translation',
   );
@@ -1489,7 +1484,9 @@ function dlts_book_features_user_default_permissions() {
   // Exported permission: translate taxonomy_term entities.
   $permissions['translate taxonomy_term entities'] = array(
     'name' => 'translate taxonomy_term entities',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -1551,7 +1548,9 @@ function dlts_book_features_user_default_permissions() {
   // Exported permission: use text format ds_code.
   $permissions['use text format ds_code'] = array(
     'name' => 'use text format ds_code',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'filter',
   );
 

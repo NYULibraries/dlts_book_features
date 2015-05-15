@@ -292,16 +292,14 @@ function dlts_book_features_views_default_views() {
   $handler->display->display_options['fields']['field_service_copy']['table'] = 'field_data_field_service_copy';
   $handler->display->display_options['fields']['field_service_copy']['field'] = 'field_service_copy';
   $handler->display->display_options['fields']['field_service_copy']['label'] = '';
-  $handler->display->display_options['fields']['field_service_copy']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_service_copy']['element_label_type'] = '0';
   $handler->display->display_options['fields']['field_service_copy']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_service_copy']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_service_copy']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_service_copy']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_service_copy']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'bookviewer_thumb',
     'image_link' => 'content',
   );
+  $handler->display->display_options['fields']['field_service_copy']['field_api_classes'] = TRUE;
   /* Field: Content: Printed Page Number */
   $handler->display->display_options['fields']['field_real_page_number']['id'] = 'field_real_page_number';
   $handler->display->display_options['fields']['field_real_page_number']['table'] = 'field_data_field_real_page_number';
@@ -1106,6 +1104,179 @@ function dlts_book_features_views_default_views() {
     t('[title] Vol. [field_volume_number]'),
   );
   $export['multivolume_select_for_metadata'] = $view;
+
+  $view = new view();
+  $view->name = 'series';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Series';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Series';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '500';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Identifier */
+  $handler->display->display_options['fields']['field_identifier']['id'] = 'field_identifier';
+  $handler->display->display_options['fields']['field_identifier']['table'] = 'field_data_field_identifier';
+  $handler->display->display_options['fields']['field_identifier']['field'] = 'field_identifier';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Sort criterion: Content: Identifier (field_identifier) */
+  $handler->display->display_options['sorts']['field_identifier_value']['id'] = 'field_identifier_value';
+  $handler->display->display_options['sorts']['field_identifier_value']['table'] = 'field_data_field_identifier';
+  $handler->display->display_options['sorts']['field_identifier_value']['field'] = 'field_identifier_value';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'dlts_series' => 'dlts_series',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/series';
+  $translatables['series'] = array(
+    t('Master'),
+    t('Series'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Identifier'),
+    t('Nid'),
+    t('Page'),
+  );
+  $export['series'] = $view;
+
+  $view = new view();
+  $view->name = 'series_books';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Series books';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Series';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '500';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_series' => 'field_series',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_series';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_series' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Series */
+  $handler->display->display_options['fields']['field_series']['id'] = 'field_series';
+  $handler->display->display_options['fields']['field_series']['table'] = 'field_data_field_series';
+  $handler->display->display_options['fields']['field_series']['field'] = 'field_series';
+  $handler->display->display_options['fields']['field_series']['type'] = 'node_reference_nid';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'dlts_series_book' => 'dlts_series_book',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/series_pages';
+  $translatables['series_books'] = array(
+    t('Master'),
+    t('Series'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Page'),
+  );
+  $export['series_books'] = $view;
 
   $view = new view();
   $view->name = 'series_for_a_book';
