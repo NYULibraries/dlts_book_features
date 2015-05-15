@@ -344,15 +344,6 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'dlts_utilities',
   );
 
-  // Exported permission: administer entity translation.
-  $permissions['administer entity translation'] = array(
-    'name' => 'administer entity translation',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'entity_translation',
-  );
-
   // Exported permission: administer facets.
   $permissions['administer facets'] = array(
     'name' => 'administer facets',
@@ -460,15 +451,6 @@ function dlts_book_features_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'search',
-  );
-
-  // Exported permission: administer services.
-  $permissions['administer services'] = array(
-    'name' => 'administer services',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'services',
   );
 
   // Exported permission: administer shortcuts.
@@ -642,6 +624,22 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: create dlts_map content.
+  $permissions['create dlts_map content'] = array(
+    'name' => 'create dlts_map content',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: create dlts_map_page content.
+  $permissions['create dlts_map_page content'] = array(
+    'name' => 'create dlts_map_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: create dlts_multivol content.
   $permissions['create dlts_multivol content'] = array(
     'name' => 'create dlts_multivol content',
@@ -768,6 +766,22 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any dlts_map content.
+  $permissions['delete any dlts_map content'] = array(
+    'name' => 'delete any dlts_map content',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any dlts_map_page content.
+  $permissions['delete any dlts_map_page content'] = array(
+    'name' => 'delete any dlts_map_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any dlts_multivol content.
   $permissions['delete any dlts_multivol content'] = array(
     'name' => 'delete any dlts_multivol content',
@@ -876,6 +890,22 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete own dlts_map content.
+  $permissions['delete own dlts_map content'] = array(
+    'name' => 'delete own dlts_map content',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own dlts_map_page content.
+  $permissions['delete own dlts_map_page content'] = array(
+    'name' => 'delete own dlts_map_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: delete own dlts_multivol content.
   $permissions['delete own dlts_multivol content'] = array(
     'name' => 'delete own dlts_multivol content',
@@ -969,6 +999,16 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: delete terms in 4.
+  $permissions['delete terms in 4'] = array(
+    'name' => 'delete terms in 4',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'collection curator',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: display drupal links.
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
@@ -1035,6 +1075,23 @@ function dlts_book_features_user_default_permissions() {
       0 => 'administrator',
       1 => 'collection curator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any dlts_map content.
+  $permissions['edit any dlts_map content'] = array(
+    'name' => 'edit any dlts_map content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'collection curator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any dlts_map_page content.
+  $permissions['edit any dlts_map_page content'] = array(
+    'name' => 'edit any dlts_map_page content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1167,6 +1224,23 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit own dlts_map content.
+  $permissions['edit own dlts_map content'] = array(
+    'name' => 'edit own dlts_map content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'collection curator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own dlts_map_page content.
+  $permissions['edit own dlts_map_page content'] = array(
+    'name' => 'edit own dlts_map_page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: edit own dlts_multivol content.
   $permissions['edit own dlts_multivol content'] = array(
     'name' => 'edit own dlts_multivol content',
@@ -1257,6 +1331,16 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: edit terms in 4.
+  $permissions['edit terms in 4'] = array(
+    'name' => 'edit terms in 4',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'collection curator',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: flush caches.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
@@ -1265,33 +1349,6 @@ function dlts_book_features_user_default_permissions() {
       1 => 'collection curator',
     ),
     'module' => 'admin_menu',
-  );
-
-  // Exported permission: get a system variable.
-  $permissions['get a system variable'] = array(
-    'name' => 'get a system variable',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'services',
-  );
-
-  // Exported permission: get any binary files.
-  $permissions['get any binary files'] = array(
-    'name' => 'get any binary files',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'services',
-  );
-
-  // Exported permission: get own binary files.
-  $permissions['get own binary files'] = array(
-    'name' => 'get own binary files',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'services',
   );
 
   // Exported permission: manage features.
@@ -1310,15 +1367,6 @@ function dlts_book_features_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'pathauto',
-  );
-
-  // Exported permission: perform unlimited index queries.
-  $permissions['perform unlimited index queries'] = array(
-    'name' => 'perform unlimited index queries',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'services',
   );
 
   // Exported permission: post comments.
@@ -1364,15 +1412,6 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: save file information.
-  $permissions['save file information'] = array(
-    'name' => 'save file information',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'services',
-  );
-
   // Exported permission: search content.
   $permissions['search content'] = array(
     'name' => 'search content',
@@ -1391,15 +1430,6 @@ function dlts_book_features_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'user',
-  );
-
-  // Exported permission: set a system variable.
-  $permissions['set a system variable'] = array(
-    'name' => 'set a system variable',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'services',
   );
 
   // Exported permission: skip comment approval.
@@ -1422,16 +1452,6 @@ function dlts_book_features_user_default_permissions() {
     'module' => 'shortcut',
   );
 
-  // Exported permission: toggle field translatability.
-  $permissions['toggle field translatability'] = array(
-    'name' => 'toggle field translatability',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'collection curator',
-    ),
-    'module' => 'entity_translation',
-  );
-
   // Exported permission: translate admin strings.
   $permissions['translate admin strings'] = array(
     'name' => 'translate admin strings',
@@ -1439,16 +1459,6 @@ function dlts_book_features_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'i18n_string',
-  );
-
-  // Exported permission: translate any entity.
-  $permissions['translate any entity'] = array(
-    'name' => 'translate any entity',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'collection curator',
-    ),
-    'module' => 'entity_translation',
   );
 
   // Exported permission: translate content.
@@ -1469,25 +1479,6 @@ function dlts_book_features_user_default_permissions() {
       1 => 'collection curator',
     ),
     'module' => 'locale',
-  );
-
-  // Exported permission: translate node entities.
-  $permissions['translate node entities'] = array(
-    'name' => 'translate node entities',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'collection curator',
-    ),
-    'module' => 'entity_translation',
-  );
-
-  // Exported permission: translate taxonomy_term entities.
-  $permissions['translate taxonomy_term entities'] = array(
-    'name' => 'translate taxonomy_term entities',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'entity_translation',
   );
 
   // Exported permission: translate user-defined strings.

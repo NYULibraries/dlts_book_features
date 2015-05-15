@@ -16,10 +16,17 @@ function dlts_book_features_apachesolr_environments() {
   $environment->name = 'Discovery Apache Solr 3.x server';
   $environment->url = 'http://dev-discovery.dlib.nyu.edu:8080/solr3_discovery/core0';
   $environment->service_class = '';
-  $environment->conf = array();
+  $environment->conf = array(
+    'apachesolr_direct_commit' => 0,
+    'apachesolr_read_only' => '0',
+    'apachesolr_soft_commit' => 0,
+  );
   $environment->index_bundles = array(
     'node' => array(
-      0 => 'dlts_series_book',
+      0 => 'dlts_book',
+      1 => 'dlts_map',
+      2 => 'dlts_map_page',
+      3 => 'dlts_series',
     ),
   );
   $export['solr'] = $environment;
