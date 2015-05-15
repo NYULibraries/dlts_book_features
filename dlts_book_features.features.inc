@@ -152,14 +152,6 @@ In early NYUP documentation, this was called \'_chapter\' - section is replacing
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'dlts_map_page' => array(
-      'name' => t('Map Page'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'dlts_multivol' => array(
       'name' => t('Multi-Volume'),
       'base' => 'node_content',
