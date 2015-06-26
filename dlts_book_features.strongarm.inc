@@ -34,13 +34,6 @@ function dlts_book_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_dlts_map_page';
-  $strongarm->value = 0;
-  $export['comment_anonymous_dlts_map_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_dlts_multivol';
   $strongarm->value = 0;
   $export['comment_anonymous_dlts_multivol'] = $strongarm;
@@ -97,13 +90,6 @@ function dlts_book_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_dlts_map_page';
-  $strongarm->value = 1;
-  $export['comment_default_mode_dlts_map_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_dlts_multivol';
   $strongarm->value = 1;
   $export['comment_default_mode_dlts_multivol'] = $strongarm;
@@ -156,13 +142,6 @@ function dlts_book_features_strongarm() {
   $strongarm->name = 'comment_default_per_page_dlts_map';
   $strongarm->value = '10';
   $export['comment_default_per_page_dlts_map'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_dlts_map_page';
-  $strongarm->value = '50';
-  $export['comment_default_per_page_dlts_map_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -237,13 +216,6 @@ function dlts_book_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_dlts_map_page';
-  $strongarm->value = '2';
-  $export['comment_dlts_map_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_dlts_multivol';
   $strongarm->value = '2';
   $export['comment_dlts_multivol'] = $strongarm;
@@ -296,13 +268,6 @@ function dlts_book_features_strongarm() {
   $strongarm->name = 'comment_form_location_dlts_map';
   $strongarm->value = 0;
   $export['comment_form_location_dlts_map'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_dlts_map_page';
-  $strongarm->value = 1;
-  $export['comment_form_location_dlts_map_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -363,13 +328,6 @@ function dlts_book_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_dlts_map_page';
-  $strongarm->value = '1';
-  $export['comment_preview_dlts_map_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_dlts_multivol';
   $strongarm->value = '1';
   $export['comment_preview_dlts_multivol'] = $strongarm;
@@ -422,13 +380,6 @@ function dlts_book_features_strongarm() {
   $strongarm->name = 'comment_subject_field_dlts_map';
   $strongarm->value = 0;
   $export['comment_subject_field_dlts_map'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_dlts_map_page';
-  $strongarm->value = 1;
-  $export['comment_subject_field_dlts_map_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -676,57 +627,6 @@ function dlts_book_features_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__dlts_map'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__dlts_map_page';
-  $strongarm->value = array(
-    'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
-      ),
-      'metadata' => array(
-        'custom_settings' => TRUE,
-      ),
-      'multivolbook' => array(
-        'custom_settings' => TRUE,
-      ),
-      'full' => array(
-        'custom_settings' => FALSE,
-      ),
-      'rss' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_index' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_result' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-      'revision' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '9',
-        ),
-      ),
-      'display' => array(),
-    ),
-  );
-  $export['field_bundle_settings_node__dlts_map_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1340,13 +1240,6 @@ function dlts_book_features_strongarm() {
   $strongarm->name = 'node_preview_dlts_map';
   $strongarm->value = '1';
   $export['node_preview_dlts_map'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_dlts_map_page';
-  $strongarm->value = '1';
-  $export['node_preview_dlts_map_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

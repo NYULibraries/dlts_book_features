@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * dlts_books.features.field_base.inc
+ * dlts_book_features.features.field_base.inc
  */
 
 /**
@@ -10,21 +10,15 @@
 function dlts_book_features_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_author'
-  $field_bases['field_author'] = array(
+  // Exported field_base: 'body'
+  $field_bases['body'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_author',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
+    'entity_types' => array(
+      0 => 'node',
     ),
+    'field_name' => 'body',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -33,6 +27,28 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_with_summary',
+  );
+
+  // Exported field_base: 'field_author'
+  $field_bases['field_author'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_author',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -46,7 +62,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_binding_orientation',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -60,6 +75,7 @@ function dlts_book_features_field_default_field_bases() {
         1 => 'Horizontal',
       ),
       'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'list_integer',
@@ -72,14 +88,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_book',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -88,17 +96,19 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'node_reference',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'referenceable_types' => array(
         'article' => 0,
-        'dlts_bitstream_set' => 0,
         'dlts_book' => 'dlts_book',
         'dlts_book_page' => 0,
         'dlts_book_section' => 0,
         'dlts_book_stitched_page' => 0,
-        'dlts_clip' => 0,
-        'dlts_playlist' => 0,
+        'dlts_collection' => 0,
+        'dlts_multivol' => 0,
+        'dlts_multivol_book' => 0,
+        'dlts_series' => 0,
+        'dlts_series_book' => 0,
         'page' => 0,
-        'test' => 0,
       ),
       'view' => array(
         'args' => array(),
@@ -117,14 +127,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_call_number',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -133,10 +135,74 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_code'
+  $field_bases['field_code'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_code',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_collection'
+  $field_bases['field_collection'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_collection',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'referenceable_types' => array(
+        'article' => 0,
+        'dlts_book' => 0,
+        'dlts_book_page' => 0,
+        'dlts_book_section' => 0,
+        'dlts_book_stitched_page' => 0,
+        'dlts_collection' => 'dlts_collection',
+        'dlts_map' => 0,
+        'dlts_multivol' => 0,
+        'dlts_multivol_book' => 0,
+        'dlts_partner' => 0,
+        'dlts_series' => 0,
+        'dlts_series_book' => 0,
+        'page' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
   );
 
   // Exported field_base: 'field_contributor'
@@ -146,14 +212,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_contributor',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -162,6 +220,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -175,14 +234,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_creator',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -191,6 +242,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -204,14 +256,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_cropped_master',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -221,6 +265,9 @@ function dlts_book_features_field_default_field_bases() {
     'module' => 'dlts_image',
     'settings' => array(
       'default_image' => 0,
+      'display_default' => 0,
+      'display_field' => 0,
+      'entity_translation_sync' => FALSE,
       'uri_scheme' => 'public',
     ),
     'translatable' => 1,
@@ -234,14 +281,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -250,6 +289,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -263,14 +303,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_dimensions',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -279,6 +311,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -292,14 +325,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_editor',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -308,10 +333,63 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_geographic_coordinates'
+  $field_bases['field_geographic_coordinates'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_geographic_coordinates',
+    'indexes' => array(
+      'lat' => array(
+        0 => 'lat',
+      ),
+      'lng' => array(
+        0 => 'lng',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'geolocation',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'geolocation_latlng',
+  );
+
+  // Exported field_base: 'field_geographic_subject'
+  $field_bases['field_geographic_subject'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_geographic_subject',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'geographic_subject',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_hand_side'
@@ -321,7 +399,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_hand_side',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -336,6 +413,7 @@ function dlts_book_features_field_default_field_bases() {
       ),
       'allowed_values_function' => '',
       'allowed_values_php' => '',
+      'entity_translation_sync' => FALSE,
     ),
     'translatable' => 1,
     'type' => 'list_integer',
@@ -348,7 +426,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_handle',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -362,6 +439,7 @@ function dlts_book_features_field_default_field_bases() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
       'title' => 'optional',
       'title_maxlength' => 128,
       'title_value' => '',
@@ -378,14 +456,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_identifier',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -394,6 +464,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -407,14 +478,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_is_part_of',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -423,6 +486,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 0,
@@ -436,14 +500,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_isbn',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -452,6 +508,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -465,14 +522,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_language',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -481,6 +530,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -494,14 +544,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_language_code',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -510,10 +552,93 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_multivol'
+  $field_bases['field_multivol'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_multivol',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'referenceable_types' => array(
+        'article' => 0,
+        'dlts_book' => 0,
+        'dlts_book_page' => 0,
+        'dlts_book_section' => 0,
+        'dlts_book_stitched_page' => 0,
+        'dlts_collection' => 0,
+        'dlts_multivol' => 'dlts_multivol',
+        'dlts_multivol_book' => 0,
+        'dlts_series' => 0,
+        'dlts_series_book' => 0,
+        'page' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
+  );
+
+  // Exported field_base: 'field_name'
+  $field_bases['field_name'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_name',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_notes_field'
+  $field_bases['field_notes_field'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_notes_field',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_number'
@@ -523,14 +648,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_number',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -539,6 +656,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -548,28 +666,27 @@ function dlts_book_features_field_default_field_bases() {
   // Exported field_base: 'field_ocr_text'
   $field_bases['field_ocr_text'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ocr_text',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'fid' => array(
+        0 => 'fid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 1,
-    'type' => 'text_long',
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
   );
 
   // Exported field_base: 'field_other_version'
@@ -579,7 +696,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_other_version',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -593,6 +709,7 @@ function dlts_book_features_field_default_field_bases() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
       'title' => 'optional',
       'title_maxlength' => 128,
       'title_value' => '',
@@ -609,11 +726,12 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_page_count',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 1,
     'type' => 'number_integer',
   );
@@ -625,11 +743,12 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_page_number_left',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 1,
     'type' => 'number_integer',
   );
@@ -641,11 +760,12 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_page_number_right',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 1,
     'type' => 'number_integer',
   );
@@ -657,7 +777,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_page_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -680,9 +799,51 @@ function dlts_book_features_field_default_field_bases() {
       ),
       'allowed_values_function' => '',
       'allowed_values_php' => '',
+      'entity_translation_sync' => FALSE,
     ),
     'translatable' => 1,
     'type' => 'list_integer',
+  );
+
+  // Exported field_base: 'field_partner'
+  $field_bases['field_partner'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_partner',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'referenceable_types' => array(
+        'article' => 0,
+        'dlts_book' => 0,
+        'dlts_book_page' => 0,
+        'dlts_book_section' => 0,
+        'dlts_book_stitched_page' => 0,
+        'dlts_collection' => 0,
+        'dlts_map' => 0,
+        'dlts_multivol' => 0,
+        'dlts_multivol_book' => 0,
+        'dlts_partner' => 'dlts_partner',
+        'dlts_series' => 0,
+        'dlts_series_book' => 0,
+        'page' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
   );
 
   // Exported field_base: 'field_pdf_file'
@@ -692,14 +853,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_pdf_file',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -710,10 +863,35 @@ function dlts_book_features_field_default_field_bases() {
     'settings' => array(
       'display_default' => 0,
       'display_field' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
       'uri_scheme' => 'public',
     ),
     'translatable' => 1,
     'type' => 'file',
+  );
+
+  // Exported field_base: 'field_physical_description'
+  $field_bases['field_physical_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_physical_description',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_publication_date'
@@ -723,13 +901,19 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_publication_date',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
     'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
+      'entity_translation_sync' => FALSE,
       'granularity' => array(
+        'day' => 0,
+        'hour' => 0,
+        'minute' => 0,
         'month' => 'month',
+        'second' => 0,
         'year' => 'year',
       ),
       'repeat' => 0,
@@ -741,21 +925,13 @@ function dlts_book_features_field_default_field_bases() {
     'type' => 'date',
   );
 
-  // Exported field_base: 'field_publisher'
-  $field_bases['field_publisher'] = array(
+  // Exported field_base: 'field_publication_date_text'
+  $field_bases['field_publication_date_text'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_publisher',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
+    'field_name' => 'field_publication_date_text',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -764,6 +940,51 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_publication_location'
+  $field_bases['field_publication_location'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_publication_location',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_publisher'
+  $field_bases['field_publisher'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_publisher',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -777,7 +998,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_read_order',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -792,6 +1012,7 @@ function dlts_book_features_field_default_field_bases() {
       ),
       'allowed_values_function' => '',
       'allowed_values_php' => '',
+      'entity_translation_sync' => FALSE,
     ),
     'translatable' => 1,
     'type' => 'list_integer',
@@ -804,14 +1025,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_real_page_number',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -820,6 +1033,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -833,14 +1047,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_representative_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -850,10 +1056,34 @@ function dlts_book_features_field_default_field_bases() {
     'module' => 'image',
     'settings' => array(
       'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
       'uri_scheme' => 'public',
     ),
     'translatable' => 1,
     'type' => 'image',
+  );
+
+  // Exported field_base: 'field_rights'
+  $field_bases['field_rights'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_rights',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_scan_date'
@@ -863,13 +1093,15 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_scan_date',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
     'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
       'enddate' => 0,
       'enddate_required' => 0,
+      'entity_translation_sync' => FALSE,
       'granularity' => array(
         'day' => 'day',
         'hour' => 0,
@@ -894,7 +1126,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_scan_order',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -909,6 +1140,7 @@ function dlts_book_features_field_default_field_bases() {
       ),
       'allowed_values_function' => '',
       'allowed_values_php' => '',
+      'entity_translation_sync' => FALSE,
     ),
     'translatable' => 1,
     'type' => 'list_integer',
@@ -921,14 +1153,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_scanning_notes',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -936,7 +1160,9 @@ function dlts_book_features_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 1,
     'type' => 'text_long',
   );
@@ -948,14 +1174,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_section_body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -963,7 +1181,9 @@ function dlts_book_features_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 1,
     'type' => 'text_long',
   );
@@ -975,14 +1195,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_section_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -991,6 +1203,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -1004,11 +1217,12 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sequence_count',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 1,
     'type' => 'number_integer',
   );
@@ -1020,11 +1234,12 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sequence_number',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 1,
     'type' => 'number_integer',
   );
@@ -1036,11 +1251,12 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sequence_number_left',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 0,
     'type' => 'number_integer',
   );
@@ -1052,13 +1268,54 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sequence_number_right',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 0,
     'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_series'
+  $field_bases['field_series'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_series',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'referenceable_types' => array(
+        'article' => 0,
+        'dlts_book' => 0,
+        'dlts_book_page' => 0,
+        'dlts_book_section' => 0,
+        'dlts_book_stitched_page' => 0,
+        'dlts_collection' => 0,
+        'dlts_multivol' => 0,
+        'dlts_multivol_book' => 0,
+        'dlts_partner' => 0,
+        'dlts_series' => 'dlts_series',
+        'dlts_series_book' => 0,
+        'page' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
   );
 
   // Exported field_base: 'field_service_copy'
@@ -1068,14 +1325,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_service_copy',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1085,6 +1334,9 @@ function dlts_book_features_field_default_field_bases() {
     'module' => 'image',
     'settings' => array(
       'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
@@ -1098,14 +1350,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_stitch_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1115,6 +1359,9 @@ function dlts_book_features_field_default_field_bases() {
     'module' => 'dlts_image',
     'settings' => array(
       'default_image' => 0,
+      'display_default' => 0,
+      'display_field' => 0,
+      'entity_translation_sync' => FALSE,
       'uri_scheme' => 'public',
     ),
     'translatable' => 1,
@@ -1128,14 +1375,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_subject',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -1146,10 +1385,12 @@ function dlts_book_features_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'parent' => 0,
           'vocabulary' => 'tags',
+          'parent' => 0,
         ),
       ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 1,
     'type' => 'taxonomy_term_reference',
@@ -1162,14 +1403,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_subtitle',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1178,6 +1411,7 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
@@ -1191,14 +1425,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_title',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1207,7 +1433,30 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 500,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_topic'
+  $field_bases['field_topic'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_topic',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
     ),
     'translatable' => 0,
     'type' => 'text',
@@ -1220,7 +1469,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_visible',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -1235,6 +1483,7 @@ function dlts_book_features_field_default_field_bases() {
       ),
       'allowed_values_function' => '',
       'allowed_values_php' => '',
+      'entity_translation_sync' => FALSE,
     ),
     'translatable' => 1,
     'type' => 'list_boolean',
@@ -1247,14 +1496,6 @@ function dlts_book_features_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_volume',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1263,9 +1504,49 @@ function dlts_book_features_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 1,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_volume_number'
+  $field_bases['field_volume_number'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_volume_number',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_volume_number_str'
+  $field_bases['field_volume_number_str'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_volume_number_str',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 50,
+    ),
+    'translatable' => 0,
     'type' => 'text',
   );
 

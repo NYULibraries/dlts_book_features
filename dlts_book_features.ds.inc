@@ -25,6 +25,28 @@ function dlts_book_features_ds_field_settings_info() {
   );
   $export['node|dlts_book|metadata'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|dlts_map|metadata';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'dlts_map';
+  $ds_fieldsetting->view_mode = 'metadata';
+  $ds_fieldsetting->settings = array(
+    'field_pdf_file' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'field_notes_field' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Notes',
+        ),
+      ),
+    ),
+  );
+  $export['node|dlts_map|metadata'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -277,16 +299,17 @@ function dlts_book_features_ds_layout_settings_info() {
         4 => 'field_publication_location',
         5 => 'field_publication_date_text',
         6 => 'field_subject',
-        7 => 'field_collection',
-        8 => 'field_partner',
-        9 => 'field_handle',
-        10 => 'field_pdf_file',
-        11 => 'field_rights',
-        12 => 'field_geographic_subject',
-        13 => 'field_geographic_coordinates',
-        14 => 'field_notes_field',
-        15 => 'field_dimensions',
-        16 => 'field_description',
+        7 => 'field_physical_description',
+        8 => 'field_notes_field',
+        9 => 'field_collection',
+        10 => 'field_partner',
+        11 => 'field_handle',
+        12 => 'field_pdf_file',
+        13 => 'field_rights',
+        14 => 'field_geographic_subject',
+        15 => 'field_geographic_coordinates',
+        16 => 'field_dimensions',
+        17 => 'field_description',
       ),
     ),
     'fields' => array(
@@ -297,6 +320,8 @@ function dlts_book_features_ds_layout_settings_info() {
       'field_publication_location' => 'ds_content',
       'field_publication_date_text' => 'ds_content',
       'field_subject' => 'ds_content',
+      'field_physical_description' => 'ds_content',
+      'field_notes_field' => 'ds_content',
       'field_collection' => 'ds_content',
       'field_partner' => 'ds_content',
       'field_handle' => 'ds_content',
@@ -304,7 +329,6 @@ function dlts_book_features_ds_layout_settings_info() {
       'field_rights' => 'ds_content',
       'field_geographic_subject' => 'ds_content',
       'field_geographic_coordinates' => 'ds_content',
-      'field_notes_field' => 'ds_content',
       'field_dimensions' => 'ds_content',
       'field_description' => 'ds_content',
     ),
