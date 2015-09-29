@@ -556,10 +556,12 @@ function dlts_book_features_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '16';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'path' => 'path',
@@ -676,6 +678,7 @@ function dlts_book_features_views_default_views() {
   $handler->display->display_options['arguments']['field_collection_nid']['table'] = 'field_data_field_collection';
   $handler->display->display_options['arguments']['field_collection_nid']['field'] = 'field_collection_nid';
   $handler->display->display_options['arguments']['field_collection_nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_collection_nid']['default_argument_options']['argument'] = 'All';
   $handler->display->display_options['arguments']['field_collection_nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_collection_nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_collection_nid']['summary_options']['items_per_page'] = '25';
@@ -742,11 +745,6 @@ function dlts_book_features_views_default_views() {
   $handler->display->display_options['filters']['field_collection_nid']['id'] = 'field_collection_nid';
   $handler->display->display_options['filters']['field_collection_nid']['table'] = 'field_data_field_collection';
   $handler->display->display_options['filters']['field_collection_nid']['field'] = 'field_collection_nid';
-  $handler->display->display_options['filters']['field_collection_nid']['value'] = array(
-    3953 => '3953',
-    1 => '1',
-    4235 => '4235',
-  );
   $handler->display->display_options['filters']['field_collection_nid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_collection_nid']['expose']['operator_id'] = 'field_collection_nid_op';
   $handler->display->display_options['filters']['field_collection_nid']['expose']['label'] = 'Collection';

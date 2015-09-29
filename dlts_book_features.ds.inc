@@ -18,9 +18,12 @@ function dlts_book_features_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'metadata';
   $ds_fieldsetting->settings = array(
     'series_for_this_book' => array(
-      'weight' => '9',
+      'weight' => '7',
       'label' => 'above',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|dlts_book|metadata'] = $ds_fieldsetting;
@@ -32,11 +35,6 @@ function dlts_book_features_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'dlts_map';
   $ds_fieldsetting->view_mode = 'metadata';
   $ds_fieldsetting->settings = array(
-    'field_pdf_file' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
     'field_notes_field' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -246,8 +244,8 @@ function dlts_book_features_ds_layout_settings_info() {
         5 => 'field_publication_date_text',
         6 => 'field_subject',
         7 => 'series_for_this_book',
-        8 => 'field_collection',
-        9 => 'field_language',
+        8 => 'field_language',
+        9 => 'field_collection',
         10 => 'field_partner',
         11 => 'field_handle',
         12 => 'field_pdf_file',
@@ -263,8 +261,8 @@ function dlts_book_features_ds_layout_settings_info() {
       'field_publication_date_text' => 'ds_content',
       'field_subject' => 'ds_content',
       'series_for_this_book' => 'ds_content',
-      'field_collection' => 'ds_content',
       'field_language' => 'ds_content',
+      'field_collection' => 'ds_content',
       'field_partner' => 'ds_content',
       'field_handle' => 'ds_content',
       'field_pdf_file' => 'ds_content',
@@ -295,33 +293,35 @@ function dlts_book_features_ds_layout_settings_info() {
         0 => 'field_title',
         1 => 'field_subtitle',
         2 => 'field_author',
-        3 => 'field_publisher',
-        4 => 'field_publication_location',
+        3 => 'field_publication_location',
+        4 => 'field_publisher',
         5 => 'field_publication_date_text',
         6 => 'field_subject',
         7 => 'field_physical_description',
         8 => 'field_notes_field',
-        9 => 'field_collection',
-        10 => 'field_partner',
-        11 => 'field_handle',
-        12 => 'field_pdf_file',
-        13 => 'field_rights',
-        14 => 'field_geographic_subject',
-        15 => 'field_geographic_coordinates',
-        16 => 'field_dimensions',
-        17 => 'field_description',
+        9 => 'field_call_number',
+        10 => 'field_collection',
+        11 => 'field_partner',
+        12 => 'field_handle',
+        13 => 'field_pdf_file',
+        14 => 'field_rights',
+        15 => 'field_geographic_subject',
+        16 => 'field_geographic_coordinates',
+        17 => 'field_dimensions',
+        18 => 'field_description',
       ),
     ),
     'fields' => array(
       'field_title' => 'ds_content',
       'field_subtitle' => 'ds_content',
       'field_author' => 'ds_content',
-      'field_publisher' => 'ds_content',
       'field_publication_location' => 'ds_content',
+      'field_publisher' => 'ds_content',
       'field_publication_date_text' => 'ds_content',
       'field_subject' => 'ds_content',
       'field_physical_description' => 'ds_content',
       'field_notes_field' => 'ds_content',
+      'field_call_number' => 'ds_content',
       'field_collection' => 'ds_content',
       'field_partner' => 'ds_content',
       'field_handle' => 'ds_content',
